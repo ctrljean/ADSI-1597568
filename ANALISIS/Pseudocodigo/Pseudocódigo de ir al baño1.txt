@@ -1,0 +1,32 @@
+Pseudocódigo de ir al baño
+Referencia: Usted está Acostado en su cama a las 5 de la mañana, durmiendo y necesita
+dirigirse al baño de su hogar y volver a su cama.
+Comienzo
+1. Abro los ojos
+2. Levanto la mitad de mi cuerpo para quedar sentado en la cama
+3. Dirijo mis piernas hacia el borde de la cama
+4. Pongo mis piernas en el suelo
+5. Busco mis chanclas
+6. Me pongo las chanclas
+7. Me paro de la cama
+8. Me dirijo hacia el encendedor de la luz
+9. Enciendo la luz
+10. Me dirijo hacia la puerta de mi habitación
+11. La abro
+12. Me dirijo hacia el baño
+13. Enciendo la luz del baño
+14. Abro la puerta del baño
+15. Hago mi necesidad fisiológica
+16. Vaceo el baño
+17. Me dirijo hacia el lavamanos
+
+18. Me lavo bien las manos
+19. Seco mis manos con una toalla
+20. Apago la luz del baño
+21. Cierro la puerta del baño
+22. Me dirijo hacia mi habitación
+23. Cierro la puerta de mi habitación
+24. Apago la luz de mi habitación
+25. Me dirijo hacia mi cama
+26. Me acuesto en mi cama
+Fin del proceso
