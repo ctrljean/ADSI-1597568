@@ -1,0 +1,27 @@
+Pseudocódigo de preparar un huevo
+Referencia: Usted está en su casa, está en el comedor en ese instante le dan ganas de prepararse
+un huevo
+Comienzo
+1. Me levanto de la silla
+2. Me dirijo hacia la cocina
+3. Busco la cacerola
+4. Busco un huevo
+5. Busco el aceite
+6. Busco la caja de fósforos
+
+7. Pongo la cacerola en el mesani
+8. Distribuyó un poco de aceite sobre la cacerola
+9. Tomo el huevo
+10. Lo rompo y lo hecho a la cacerola
+11. Enciendo la estufa
+12. Pongo la estufa encima del fogón
+13. Espero que se prepare el huevo
+14. Cuando esté listo apago la estufa
+15. Tomo un plato
+16. Tomo la cacerola con el huevo
+17. Lo hecho con una cuchara al plato
+18. Me dirijo con mi platillo hacia el comedor
+19. Disfruto de mi comida en el comedor
+20. Llevo los platos al lavaplatos
+21. Lavo los platos y la cacerola
+Fin del proceso

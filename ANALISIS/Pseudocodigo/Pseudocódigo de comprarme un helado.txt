@@ -1,0 +1,28 @@
+Pseudocódigo de comprarme un helado
+Referencia: Usted está en el andén de su hogar y le dan ganas de comerse un helado
+Comienzo
+1. I'm heading towards the corner of my house
+
+2. Turn to the left
+3. Continue straight until you reach the other corner
+4. I look both ways before crossing the street
+5. I cross the street
+6. I enter the ice cream shop
+7. I sit at a table
+8. I wait for you to attend to me
+9. I watch the menu
+10. I look at my wallet with how much budget I have
+11. I patiently wait for my ice cream
+12. I enjoy my ice cream
+13. I clean my hands with napkins and my mouth
+14. I go to the box and pay for the ice cream
+15. I go to the bathroom and wash my hands
+16. The dry
+17. I'm heading towards the exit of the ice cream parlor
+18. He watched the street before crossing
+19. I cross the street
+20. I'm still in a straight position to the corner
+21. Turn left
+22. He advanced to the door of my home
+23. I enter my home
+ Fin del proceso
