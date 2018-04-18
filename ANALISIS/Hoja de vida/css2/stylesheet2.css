@@ -1,0 +1,141 @@
+*{ /*Propiedad global de mi estructura*/
+    margin: 0px;
+    padding: 0px;
+}
+body{/*Contenido de fondo*/
+    background-image: url(../img/fondo9.jpg);
+    background-size:100%;
+    /* background-repeat: no-repeat; */
+}
+header{/*cabecera de la pagina*/
+    width: 100vw;
+    height: 150px;
+    background-color:#00BFFF; 
+
+}
+.contenedor{/*Rejilla de mi grid */
+    display:grid;
+    grid-template-columns:repeat( 20,120px); 
+    grid-template-rows:repeat(20,120px)
+}
+.contenido{/*caja flotante posicionada con grid*/
+    background-color:white;
+    width: 600px;
+    height: 430px;
+    /* justify-content: center;
+    align-items: center; */
+    border-radius: 30%;
+   
+}
+.contenido:first-child{/*Propiedad que define la pocision de mi caja flotante con grid*/
+    grid-column: 4 / 9 ;
+    grid-row: 2 / 6 ;
+}
+.final{/*Pie de pagina de mi web*/
+    width: 100vw;
+    height: 250px;
+    background-color: springgreen;
+}
+.creador p{/*Letras de mi pie de pagina*/
+    font-size: 3rem;
+    text-align: center;
+}
+.foto{
+    position: relative;
+    left: 220px;
+    top: 1px;
+    border: solid blue 3px;
+ }
+ .titulo{/*Posicion del titulo de mi primer contenedor*/
+    position: relative;
+    top: 1px;
+    font-size: 35px;
+    text-align: center;
+ }
+ .lista ul{/*Lista de mi primer contenedor*/
+    list-style: none;
+    font-size: 20px;
+    text-align: center;
+   }
+.informacion{/*Rejilla de mi 2 grid*/
+    display:grid;
+    grid-template-columns:repeat( 20,120px); 
+    grid-template-rows:repeat(20,111px) 
+   }
+.basica{/*Contenedor de mi 2 caja posicionada con grid*/
+    background-color:white;
+    height: 300px;
+    width: 600px;
+    }
+.basica:first-child{/*Posicion de mi 2 caja flotante con grid*/
+    grid-column: 4 / 9 ;
+    grid-row: 6 / 8 ;
+
+    }
+.lista2 ul{/*Lista de mi 2 contenedor con grid*/
+    font-size: 20px;
+    text-align: center;
+    padding: 25px;
+    list-style: none;
+    }
+.titulo2{/*Titulo de mi 2 contenedor con grid*/
+    font-size: 35px;
+    text-align: center;
+    padding: 5px;
+    }
+.familiar{/*Rejilla de mi 3 grid*/
+    display:grid;
+    grid-template-columns:repeat( 20,120px); 
+    grid-template-rows:repeat(20,123px) 
+    }
+.familia{/*contenedor de mi 3 grid*/
+    background-color:white;
+    height: 300px;
+    width: 600px;
+    }
+.familia:first-child{/*Posicionamiento de mi 3 grid*/
+    grid-column: 3 / 9 ;
+    grid-row: 8 / 11 ;
+    }
+.lista3 ul{/*Lista de mi 3 contenedor con grid*/
+    font-size: 20px;
+    text-align: center;
+    padding: 25px;
+    list-style: none;
+    }
+.titulo3{/*titulo de mi 3 contenedor con grid*/
+    font-size: 35px;
+    text-align: center;
+    padding: 5px;
+    }
+    /* Desde aqui es la barra social */
+.social{  /*Contenedor de los logos    */
+    position: fixed; /*Posicion fija   */
+    bottom:0px; /*Posicion en pixeles hacia la derecha en este caso esta pegado al margen    */
+    top:200px; /*Posicion en pixeles hacia abajo    */
+    z-index:2000; /*Para poner encima de todos los objetos este*/
+}
+.social ul{  /*Contenedor de las listas    */
+    list-style: none;  /*Quitar el valor predeterminado de las listas   */
+}
+.social ul li a{ 
+    display: inline-block;
+    color: white;
+    background: black;
+    padding: 50px 15px;  /*Espaciado hacia arriba,hacia los lados    */
+    text-decoration: none; /*Quitar subrayado en los hreft    */
+    -webkit-transition:all 500ms ease; /*Animaciones del hover   */
+    -o-transition:all 500ms ease ; /*Animaciones del hover   */
+    transition:all 500ms ease ; /*Animaciones del hover   */
+
+}
+.social ul li .icon-facebook2{background:#3b5998;}   /*Colores de caja de logo    */
+.social ul li .icon-twitter{background:#00abf0;}
+.social ul li .icon-google-plus2{background:#d95232;}
+.social ul li .icon-youtube{background:#ae181f;}
+
+.social ul li a:hover{  /*Posicion de una sombra al ser seleccionada    */
+    padding: 50px 30px;  /*desplazamiento hacia un lado,conservando su mismo tamaño    */
+    background-color: black;
+
+}

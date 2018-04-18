@@ -1,0 +1,37 @@
+*{
+    margin: 0px;  /*Clase universal para toda la estructura    */
+    padding: 0px;  /*Espaciado hacia afuera   */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.social{  /*Contenedor de los logos    */
+    position: fixed; /*Posicion fija   */
+    left:0px; /*Posicion en pixeles hacia la derecha en este caso esta pegado al margen    */
+    top:200px; /*Posicion en pixeles hacia abajo    */
+    z-index:2000; /*Para poner encima de todos los objetos este*/
+}
+.social ul{  /*Contenedor de las listas    */
+    list-style: none;  /*Quitar el valor predeterminado de las listas   */
+}
+.social ul li a{ 
+    display: inline-block;
+    color: white;
+    background: black;
+    padding: 50px 15px;  /*Espaciado hacia arriba,hacia los lados    */
+    text-decoration: none; /*Quitar subrayado en los hreft    */
+    -webkit-transition:all 500ms ease; /*Animaciones del hover   */
+    -o-transition:all 500ms ease ; /*Animaciones del hover   */
+    transition:all 500ms ease ; /*Animaciones del hover   */
+
+}
+.social ul li .icon-facebook2{background:#3b5998;}   /*Colores de caja de logo    */
+.social ul li .icon-twitter{background:#00abf0;}
+.social ul li .icon-google-plus2{background:#d95232;}
+.social ul li .icon-youtube{background:#ae181f;}
+
+.social ul li a:hover{  /*Posicion de una sombra al ser seleccionada    */
+    padding: 50px 30px;  /*desplazamiento hacia un lado,conservando su mismo tamaño    */
+    background-color: black;
+
+}

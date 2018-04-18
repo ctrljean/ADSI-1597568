@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hoja de vida</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/stylesheet.css" />
+    <link rel="icon" href="img/jean.ico" type="image/gif" sizes="16x16">
+</head>
+<body class="fondo">
+    <div class="izquierda">
+         <img src="img/fondo.jpg" width="200px" height="200px;">
+    </div>
+    <div class="derecha">
+        <form class="formulario">
+            <h1>Iniciar hoja de vida</h1>
+            <input class="btn-form" type="text" id="usuario" placeholder="Nombre de usuario">
+            <input class="btn-form" type="password" id="password" placeholder="Contraseña">
+            <input class="btn-form2" type="button" value="Ingresar" onClick="entrar()">
+            <input class="btn-form2" type="reset" name="Borrar" id="Borrar" value="Reset" class="boton"> 
+        </form>
+    </div>
+    <script language="JavaScript">
+	
+        function entrar() {
+            var usu = document.getElementById('usuario');
+            var pass = document.getElementById('password');
+            
+            var log = "jean";
+            var contra = "123";
+            
+
+            
+            if(usu.value == log) {
+            
+                if(pass.value == contra) {
+                
+                    window.alert("Tu haz ingresado como " + usu.value);
+                    window.open("blanco.html");
+                
+                } else {
+                
+                    window.alert("Usuario incorrecto");
+                
+                }
+            
+            } else {
+            
+                    window.alert("Contraseña incorrecta!");
+            
+            }
+        
+        }
+        
+        
+        </script>
+</body>
+</html>
