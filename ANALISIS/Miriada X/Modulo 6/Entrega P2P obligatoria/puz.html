@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Jean</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<script src="jquery-2.1.4.js"> </script>
+<script src="jquery-ui.min.js"> </script>
+<script src="jquery.ui.touch-punch.min.js"> </script>
+<style>
+
+* { user-select: none;           /* user-select, hace el objeto no seleccionable */
+	  -webkit-touch-callout: none; /* anula el efecto visual del touch prolongado sobre el objeto */
+	  -webkit-tap-highlight-color: rgba(0,0,0,0); /* anula feedback de color al hacer tap en link */
+	  -webkit-tap-highlight-color: transparent;   /* similar anterior en algunos android */
+
+    margin:0;
+	  padding:0;
+}
+
+#sortable { 
+  list-style-type: none;
+   margin-left:auto;
+   margin-right:auto;
+}
+
+#sortable li { 
+  float: left; 
+  width: 33.3%; 
+}
+
+#sortable li img {
+	vertical-align:bottom;
+	width: 100%; 
+ 	height: auto;
+}
+        /* En apaisado (landscape) anchura = máxima altura */
+@media (orientation:landscape){
+#sortable { width:100vh; } /* 100vh: 100% del alto de ventana visualizada */
+}
+        /* En vertical (portrait) se adapta al máximo ancho */
+@media (orientation:portrait){
+#sortable { width:100%; }
+}
+</style>
+
+<script>
+  $(function() {
+   $( "#sortable" ).sortable();
+   $( "#sortable" ).disableSelection();
+  });
+</script>
+</head>
+<body>
+	<div class="container">
+		<br>
+<header>
+	<nav class="navbar navbar-default navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target="#navbar-1">
+					<span class="sr-only"> Menu</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">Logotipo</a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-1">
+				<ul class="nav navbar-nav">
+					<li><a href="">welcome</a></li>
+					<li><a href="">Featured</a></li>
+					<li><a href="">People</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Music 
+                             <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+      		<li><a href="#">Music - Opción 1</a></li>
+     		 <li><a href="#">Music - Opción 2</a></li>
+    		      </ul>
+
+					</li>
+					<li><a href="">Mixes</a></li>
+					<li><a href="">Videos</a></li>
+					<li><a href="">Radio</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+</div>
+<ul id="sortable">
+    <li><img  src="rafael_8.jpg" /></li>
+    <li><img  src="rafael_4.jpg" /></li>
+    <li><img  src="rafael_6.jpg" /></li>
+    <li><img  src="rafael_2.jpg" /></li>
+    <li><img  src="rafael_9.jpg" /></li>
+    <li><img  src="rafael_3.jpg" /></li>
+    <li><img  src="rafael_7.jpg" /></li>
+    <li><img  src="rafael_1.jpg" /></li>
+    <li><img  src="rafael_5.jpg" /></li>
+  </ul>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Módulo 2></title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+<script src="//use.edgefonts.net/unifrakturmaguntia.js"></script>
+<style>
+  .uno_a{
+    color: red;
+    background: blue;
+  }
+  .uno_b{
+    background: pink; /* Para navegadores que no soportan degradado*/
+    /* Para Safari */
+    background: -webkit-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+    /* Para Opera */
+    background: -o-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+    /* Para FireFox 15 */
+    background: -moz-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+    /* Standard  */
+    background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);  
+  }
+  .dos_a{
+   font-family: 'Roboto', sans-serif;  
+  }
+  .dos_b{
+   font-family: 'unifrakturmaguntia', sans-serif;
+  }
+  figure{
+    display:inline-block;  
+  }
+  figure img{
+  width: 300px;
+  }
+  
+  figcaption{
+    text-align: center;    
+  }
+  
+  div{
+    display: inline-block;
+    width:24%;
+    height:300px;
+    border: 2px solid gray;
+  }
+  div span{
+    display: inline-block;
+    margin-top: 45%;
+  }
+  .si{
+    border-radius: 50% 0 0 0;
+  }
+  .sd{
+    border-radius: 0 30%  0 0; 
+  }
+  .id{
+    border-radius: 0 0 100%  0;
+  }
+  .ii{
+   border-radius: 0 0 0 100px; 
+  }
+  
+</style>
+
+</head>
+<body>
+<p>Pagina Jean Carlo Castaño</p>
+<h1>Crear una página web personal </h1>
+<ol>
+    <li>
+    Uso de colores para texto y fondo, incluyendo al menos colores degradados en alguna de sus cajas.
+    <p class="uno_a">Texto degradado.</p>
+    <p class="uno_b">caja con degradados</p>
+    </li>
+    <li>
+    Inclusión de tipografías externas de Google Fonts, Adobe Edge Web Fonts o un servicio similar on line.
+    <p class="dos_a">Texto con fuente <u>roboto</u> de google</p>
+    <p class="dos_b">Texto con fuente <u>unifrakturmaguntia</u> de Adobe Edge</p>
+    </li>
+    <li>
+    Distintos encabezados.
+    <h1>Encabezado h1</h1><h2>Encabezado h2</h2><h3>Encabezado h3</h3><h4>Encabezado h4</h4><h5>Encabezado h5</h5><h6>Encabezado h6</h6>
+    </li>
+    <li>
+    Uso de caracteres especiales
+    <p>Signo mayor &gt; con &amp;gt; y Signo menor &lt; con &amp;lt;</p>
+    <p>Signo menor &#60; con &amp;#60; y Signo mayor &#62; con &amp;#62;</p>
+    </li>
+    <li>
+    Incluir, imágenes de tipo bitmap y vectorial.
+    <br>
+    <figure>
+      <figcaption>Imagen bitmap</figcaption>
+      <img src="p.png">
+    </figure>
+    <figure >
+      <figcaption>Imagen vectorial</figcaption>
+      <img src="Signo_de_importante.svg">
+    </figure>
+    
+    </li>
+    <li>
+    Incluir algún vídeo.
+    <p>
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/3p_v8IRaL20?list=PLp_G02Nzzs-XUM2emWRDME6J12U67I_K3" frameborder="0" allowfullscreen></iframe>
+    </p>
+    </li>
+    <li>
+    Incluir bordes redondeados en alguna de sus cajas.
+    <br>
+    <div class="si"> <span>Borde Superior Izquierda 50% </span></div><br>
+    <div class="sd"> <span>Borde Superior Derecha 30%</span></div><br>
+    <div class="id"> <span>Borde Inferior Derecha 100%</span></div><br>
+    <div class="ii"> <span>Borde Inferior Izquierda 100px</span></div><br>
+    <p>
+    </li>
+    <li>
+    La página debe comenzar con el siguiente encabezamiento:  “Página personal de  &lt; nombre y apellido &gt; del alumno ”
+    </li>
+</ol>
+<p>
+Subir dicha aplicación a la cuenta de Neocities.org o de su elección.
+</p>
+</body>
+</html>

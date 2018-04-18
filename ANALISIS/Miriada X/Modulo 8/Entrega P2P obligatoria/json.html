@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Carrusel de citas con elementos JSON y LocalStorage</title>
+    <script type="text/javascript" src="http://joorges.neocities.org/8/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="http://joorges.neocities.org/8/zepto.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://joorges.neocities.org/8/citas_slide.css">
+		<script type="text/javascript" src="http://joorges.neocities.org/8/galeria.js"></script>
+		<link rel="stylesheet" type="text/css" href="estilos.css">
+		
+<script>
+var t, actual;
+
+/* Aqui introducimos el parseJSON y la variable de almacenamiento de visitas LocalStorage */
+localStorage.galeriaLoc = localStorage.galeriaLoc || "[]";
+var galeriaLoc = JSON.parse(localStorage.galeriaLoc);
+
+function select(i){
+   actual = i;
+
+  $("nav a")
+    .removeClass("on off")
+    .addClass(function(j){return(j===i)?"on":"off";});
+
+  $("#persona").html(galeria[i].persona);
+  $("#frase").html(galeria[i].frase);
+  $("#foto").attr("src", galeria[i].foto);
+
+  clearTimeout(t);
+  t = setTimeout( function(){select((i + 1) % galeria.length);}, 3000);
+}
+
+function generar_selector(){ // regenera la botonera
+  var selector = $("#selector");
+
+  selector.html("");
+  
+  galeria.forEach(function(elem,i) {
+    selector.append("<li><a onClick='select("+i+")'></a></li>");
+  });
+
+}
+
+/* Contar las visitas a la página*/
+$(function(){
+	var visitas=$("#visitas");
+	localStorage.visitas=localStorage.visitas || 0;
+	localStorage.setItem("visitas", parseInt(localStorage.getItem("visitas") || 0) + 1);
+	visitas.html(localStorage.visitas);
+	if (galeriaLoc.length>0) /* Si hay varias variables locales se reemplaza la galeria */
+		{ galeria=galeriaLoc; } generar_selector();
+
+	$("#editar").on("click", function(){
+		clearTimeout(t);
+		if (galeria.length>0)
+		  {
+			$("#persona_d").html(galeria[actual].persona);
+			$("#frase_d").html(galeria[actual].frase);
+			$("#foto_d").html(galeria[actual].foto);
+		  }
+		$("#datos").css("display", "block");
+	})
+	
+	/* Para las nuevas frases */
+	$("#nuevo").on("click", function(){
+		$("#datos").css("display", "none");
+		actual=galeria.push({
+			persona:$("#persona_d").html(),
+			frase:$("#frase_d").html(),
+			foto:$("#foto_d").html()
+		}) - 1;
+		generar_selector();
+		select(actual);
+	})
+
+	/* Para eleminar frases, igual que en nuevo */
+	$("#borrar").on("click", function(){
+		$("#datos").css("display", "none");
+		galeria.splice(actual, 1);
+		generar_selector();
+		if (galeria.length>0) {select(0);
+							   $("borrar").attr("title", "Eliminar cita actual");
+							  }
+ 		else if (galeria.length===0)
+ 				{
+ 					$("#persona").html("");
+ 					$("#frase").html("");
+ 					$("#foto").attr("src","");
+ 					$("#borrar").attr("title","No hay citas para eliminar");
+ 		}
+	})
+
+	/* Función para actualizar las estadísticas */
+	$("#guardar").on("click", function(){
+		$("#datos").css("display", "none");
+			galeria[actual].persona=$("#persona_d").html();
+			galeria[actual].frase=$("#frase_d").html();
+			galeria[actual].foto=$("#foto_d").html();
+			generar_selector();
+			select(0);
+			})
+
+
+	/* Función para guardar la base de datos de JSON */
+	$("#BaseDat").on("click", function(){
+		$("#datos").css("display", "none");
+		var respuesta=confirm("¿Quiere guardar los datos de las citas en la base de datos local?")
+		if(respuesta===true)
+			{
+				localStorage.removeItem("galeriaLoc");
+				localStorage.galeriaLoc=localStorage.galeriaLoc || "[]";
+				galeriaLoc=JSON.parse(localStorage.	
+					galeriaLoc);
+				for (j=0; j < galeria.length; j++)
+					{ galeriaLoc.push(galeria[j]);}
+				localStorage.galeriaLoc=JSON.stringify(galeriaLoc);
+				alert("Datos de las citas guardados en la base de datos local, estarán disponibles la próxima vez que abra usted el ordenador");
+				select(0);
+			}
+})
+
+	/* Función para volver a las citas con las que inicialmente comenzamos */
+	$("#Reiniciar").on("click", function(){
+		$("datos").css("display", "none");
+			var respuesta=confirm ("¿Quiere usted borrar todas las citas añadidas y devolver la base de datos a su estado inicial?") 
+			if(respuesta === true)
+				{
+				localStorage.removeItem("galeriaLoc");
+					galeria=fnClone(galeriaInicial);
+					generar_selector();
+					select(0);
+					alert("Citas originales disponibles, se borró la base local de citas");
+				}
+})
+
+	/* Para cuando hacemos click sobre el selector */
+	$("#selector").on("click"), function(){
+		$("#datos").css("display", "none");
+	}
+	select(0);
+});
+</script>
+</head>
+<body>
+<div class="contenido">
+  <nav> 
+    <ul id="selector"></ul>
+  </nav>
+  <section id="caja">
+    <img id="foto" alt="" />
+    <div class="textos">
+      <p id="frase"></p>
+      <p id="persona"></p>
+    </div>
+  </section>
+  <div class="editar" title="Editar citas"</div>>Editar carrusel de citas
+    <img id="editar" src="http://joorges.neocities.org/8/carat-d-white.svg" alt="Editar"/>
+  </div>
+  <div class="reiniciar" title="Reiniciar citas">Reiniciar citas
+    <img id="Reiniciar" src="http://joorges.neocities.org/8/reiniciar.svg" alt="Reiniciar"/>
+  </div>
+  <section id="datos">
+    <div contentEditable="true" id="persona_d"></div>
+    <div contentEditable="true" id="frase_d"></div>
+    <div contentEditable="true" id="foto_d"></div>
+    <div id="botones">
+      <ul>
+        <li><img src="http://joorges.neocities.org/8/edit-black.svg"   alt="" id="guardar" title="Modificar cita"/></li>
+        <li><img src="http://joorges.neocities.org/8/plus-black.svg"   alt="" id="nuevo"   title="Crear cita" /></li>
+        <li><img src="http://joorges.neocities.org/8/delete-black.svg" alt="" id="borrar" title="Eliminar cita"/></li>       
+        <li><img src="http://joorges.neocities.org/8/padlock.svg" alt="" id="BaseDat" title="Guardar en base de datos serializada por JSON" /></li>
+      </ul>
+    </div>
+  </section>
+  <div id="numvisitas">
+  	Es su visita número <span id="visitas"></span> a esta página<br />
+  </div>
+</body>
+</html>

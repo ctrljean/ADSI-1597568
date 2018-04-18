@@ -1,0 +1,212 @@
+
+<!-- saved from url=(0059)file:///C:/Users/ANDRES%20FELIPE/Documents/Citas/Index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>
+            <meta charset="utf-8">
+
+
+    
+
+        <title>Alex mod 7</title>
+        
+
+        <link rel="stylesheet" href="./modulo7_files/fira.css">
+        <link rel="stylesheet" type="text/css" href="./modulo7_files/css">
+
+
+        <script type="text/javascript" src="./modulo7_files/jquery-2.1.4.min.js.descarga">
+        </script>
+
+
+        <link rel="stylesheet" type="text/css" href="./modulo7_files/citas_slide.css">
+
+
+
+
+
+        <script type="text/javascript">
+
+            var t,
+                actual;
+
+            function select(i) {
+
+                actual = i;
+
+                $("nav a")
+                  .removeClass("on off")
+                  .addClass(function (j) { return (j === i) ? "on" : "off"; });
+
+                $("#persona").html(galeria[i].persona);
+                $("#frase").html(galeria[i].frase);
+                $("#foto").attr("src", galeria[i].foto);
+
+                clearTimeout(t);
+                t = setTimeout(function () { select((i + 1) % galeria.length); }, 5000);
+            }
+
+            function generar_selector() {
+                var selector = $("#selector");
+
+                selector.html("");
+
+                galeria.forEach(function (elem, i) {
+                    selector.append("<li><a onClick='select(" + i + ")'></a></li>");
+                });
+            }
+
+            $(
+                function () {
+
+                    
+
+
+
+                    $("#editar").on("click", function () {
+
+                        clearTimeout(t);
+
+                        if (galeria.length > 0) {
+                            $("#persona_d").html(galeria[actual].persona);
+                            $("#frase_d").html(galeria[actual].frase);
+                            $("#foto_d").html(galeria[actual].foto);
+                        }
+                        else {
+                            $("#persona_d").html("");
+                            $("#frase_d").html("");
+                            $("#foto_d").html("http://");
+                        }
+
+
+                        if ($("#datos").css("display") === "none") {
+                            $("#datos").css("display", "block");
+                        }
+                        else {
+                            $("#datos").css("display", "none");
+                            select(actual);
+                        }
+                    })
+
+
+                    $("#guardar").on("click", function () {
+                        $("#datos").css("display", "none");
+
+                        galeria[actual].persona = $("#persona_d").html();
+                        galeria[actual].frase = $("#frase_d").html();
+                        galeria[actual].foto = $("#foto_d").html();
+
+                        generar_selector();
+
+                        select(actual);
+                    })
+
+
+                    $("#nuevo").on("click", function () {
+                        $("#datos").css("display", "none");
+
+                        actual = galeria.push({
+                            persona: $("#persona_d").html(),
+                            frase: $("#frase_d").html(),
+                            foto: $("#foto_d").html()
+                        }) - 1;
+
+                        generar_selector();
+
+                        select(actual);
+                    })
+
+
+                    $("#borrar").on("click", function () {
+                        $("#datos").css("display", "none");
+
+                        galeria.splice(actual, 1);
+
+                        if (actual > 1) {
+                            actual--;
+                        }
+                        else {
+                            actual = 0;
+                        }
+
+                        if (galeria.length > 0) {
+                            generar_selector();
+                            select(actual);
+                        }
+                        else {
+                            $("#persona").empty();
+                            $("#frase").empty();
+                            $("#foto").attr("src", "");
+
+                            $("#selector").empty();
+                        }
+                    })
+
+
+
+                    generar_selector();
+                    select(0);
+                }
+              );
+
+        </script>
+
+        <script type="text/javascript" src="./modulo7_files/galeria.js.descarga"></script>
+
+    
+
+
+
+
+    
+
+      
+
+       
+    
+        <div class="contenido">
+
+            <nav>
+                <ul id="selector"><li><a onclick="select(0)" class="on"></a></li><li><a onclick="select(1)" class="off"></a></li><li><a onclick="select(2)" class="off"></a></li><li><a onclick="select(3)" class="off"></a></li><li><a onclick="select(4)" class="off"></a></li><li><a onclick="select(5)" class="off"></a></li></ul>
+            </nav>
+
+            <section id="caja">
+
+                <img id="foto" alt="" src="./Pipe_files/Cara-de-Buda.jpg">
+
+                <div class="textos">
+                    <p id="frase">En la confrontación entre el arrollo y la roca, el arrollo siempre ganará, no por la fuerza, sino por la persistencia.</p>
+                    <p id="persona">Buddha - बुद्धा</p>
+                </div>
+
+            </section>
+
+            <div class="editar" id="editar">
+                <img src="./modulo7_files/carat-d-white.svg" alt="">
+            </div>
+
+            <section id="datos">
+
+                <div contenteditable="true" id="persona_d" title="Nombre del autor de la cita." data-text="Nombre del autor de la cita."></div>
+
+                <div contenteditable="true" id="frase_d" title="Detalle del texto de la cita." data-text="Detalle del texto de la cita."></div>
+
+                <div contenteditable="true" id="foto_d" title="URL completa de la ubicación de la imagen o retrato del autor." data-text="URL completa de la ubicación de la imagen o retrato del autor."></div>
+
+                <div id="botones">
+
+                    <ul>
+                        <li>
+                            <img src="./modulo7_files/edit-black.svg" alt="" id="guardar"></li>
+                        <li>
+                            <img src="./modulo7_files/plus-black.svg" alt="" id="nuevo"></li>
+                        <li>
+                            <img src="./modulo7_files/delete-black.svg" alt="" id="borrar"></li>
+                    </ul>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+</body></html>

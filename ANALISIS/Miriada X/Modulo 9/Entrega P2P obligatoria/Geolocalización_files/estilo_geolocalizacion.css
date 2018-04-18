@@ -1,0 +1,55 @@
+.instrucciones, .mostrar_mapa{
+	background-color: #23272A;
+}
+.instrucciones h1{
+	text-align: center;
+	color:red;
+	margin: 0 30px;
+}
+.instrucciones h2{
+	text-align: justify;
+	color: rgb(255, 0, 0);
+	margin: 0 30px;
+}
+.instrucciones p{
+	text-align: justify;
+	color: #8FA7AE;
+	margin: 0 30px;
+}
+.instrucciones ul li{
+	color: #8FA7AE;
+	margin: 0 50px;
+}
+.mostrar_mapa h1{
+	text-align: justify;
+	color: red;
+	margin: 0 30px;
+}
+.mostrar_mapa p{
+	color: #8FA7AE;
+	font-size: 20px;
+	margin: 0 30px;
+}
+button{
+	width: 100px;
+	height: 10%;
+
+	background-color: black;
+	color: white;
+
+	border-radius: 200px 200px 200px 200px;
+	-moz-border-radius: 200px 200px 200px 200px;
+	-webkit-border-radius: 200px 200px 200px 200px;
+
+	font-family: 'Roboto Condensed', sans-serif;
+	text-align: center;
+	font-size: 20px;
+}
+button:hover{
+	color: orange;
+}
+#map{
+  margin: 0 30px;
+  padding-top: 500px;
+  background: rgba(0,255,0,0.5); /* verde si no hay mapa */
+}

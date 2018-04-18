@@ -1,0 +1,60 @@
+<!DOCTYPE html><html>
+<head>
+  <title>Pagina ejercicio</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1 id="h1"></h1>
+  <h4>Jean Carlo Castaño Millan</h4>
+  <h2 id="h2">La fecha y la hora son:</h2>
+  <div id="fecha"></div>
+
+ <script type="text/javascript">
+  var fecha = new Date();
+  var msj;
+
+  if      (fecha.getHours() < 7)  { msj = "Buenas noches";}
+  else if (fecha.getHours() < 12) { msj = "Buenos días";}
+  else if (fecha.getHours() < 21) { msj = "Buenas tardes";}
+  else                                          { msj = "Buenas noches";}
+
+  document.getElementById("h1").innerHTML    = msj;
+  document.getElementById("fecha").innerHTML = fecha;
+</script>
+<div>
+     <h3><u>Desarrollo del Punto 2</u></h3>
+     <p>a) El InnerHTML del elemento identificado por id="h2" es:  
+     <br><em><strong>
+     <script type="   text/javaScript"> 
+        document.writeln(document.getElementById("h2").innerHTML);
+     </script></strong></em></p>
+  
+    <p>b) El contenido del outerHTML del elemento identificado por id="h1" es:  
+    <em><strong>
+     <script type="   text/javaScript"> 
+        document.writeln(document.getElementById("h1").outerHTML);
+     </script></strong></em></p>
+
+     <p>c) El contenido de la propiedad Global: location.href es: 
+     <br><em><strong>
+     <script type="   text/javaScript"> 
+         document.writeln(document.location.href);
+     </script></strong></em></p>
+     
+     <p>d) El contenido de la propiedad Global: location es:  
+     <br><em> <strong>
+     <script type="   text/javaScript"> 
+        document.writeln(location);
+     </script>
+     </strong></em></p>
+     <p>e) El contenido de las propiedad Globales: screen.width y screen.heigth es:
+     <br> <em> <strong>
+     <script type="text/javaScript"> 
+        document.writeln("   screen.width=" + screen.width + "  y screen.heigth =" + screen.height);
+     </script>
+     </strong></em></p>
+
+
+</div>
+</body>
+</html>

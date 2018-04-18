@@ -1,0 +1,84 @@
+body
+{
+	background-image: url(paisaje.jpg);
+	background-size: 100% 720px;
+}
+#texto
+{
+font-size: 23px;
+width: 500px;
+height:3500px;
+color: #FFFFFF;
+background-color: rgba(0, 0, 0, 0.9);
+text-align: left;
+margin: 0 auto;
+border-radius: 15px;
+}
+h1
+{
+color: #00FF5D;
+}
+div.contenedor
+{
+	width: 150px;
+	height:130px;
+	float: left;
+	transition: height .4s;
+}
+div#uno
+{
+background-color: rgb(208,101,3);
+}
+div#dos
+{
+background-color: rgb(233,147,26);
+}
+div#tres
+{
+background-color: rgb(22,145,190);
+}
+div#cuatro
+{
+background-color: rgb(233,187,162);
+}
+div#cinco
+{
+background-color: rgb(27,54,71);
+}
+div#seis
+{
+background-color: rgb(21,48,54);
+}
+img.icon{
+	display: block;
+	margin:5px auto;
+	background-color: rgba(255,255,255,.15);
+	width:25px;
+	padding:20px;
+	-webkit-border-radius: 50%;
+	-webkit-box-shadow: 0px 0px 0px 30px rgba(255,255,255,0);
+	-webkit-transition:box-shadow .4s;
+}
+
+p.texto{
+	font-size: 1.2em;
+	color:white;
+	text-align: center;
+	padding-top:10px;
+	opacity: .6;
+	-webkit-transition: padding-top .4s;
+}
+
+div.contenedor:hover{
+	height:250px;
+}
+
+div.contenedor:hover p.texto{
+	padding-top: 30px;
+	opacity: 1;
+}
+
+div.contenedor:hover img.icon{
+	-webkit-box-shadow:0px 0px 0px 0px rgba(255,255,255,.6);
+}
+
